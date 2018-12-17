@@ -21,3 +21,9 @@ Route::get('/who',function(){
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::resource('companies',CompaniesController);
+Route::resource('projects',ProjectsController);
+Route::resource('tasks',TasksController);
+Route::resource('roles',Rolesontroller);
+Route::resource('users',UsersController);
