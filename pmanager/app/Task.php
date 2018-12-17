@@ -16,5 +16,18 @@ class Task extends Model
         'user_id',
         'company_id'
     ];
+
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
+    public function project(){
+        return $this->belongsTo('App\Project');
+    }
+    public function company(){
+        return $this->belongsTo('App\Company');
+    }
+    public function users(){
+        return $this->belongsToMany('App\User');
+    }
 }
 

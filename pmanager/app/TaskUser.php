@@ -11,4 +11,5 @@ class TaskUser extends Model
         'task_id',
         'user_id'
     ];
+    
 }
