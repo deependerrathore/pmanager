@@ -27,3 +27,6 @@ Route::resource('projects','ProjectsController');
 Route::resource('tasks','TasksController');
 Route::resource('roles','Rolesontroller');
 Route::resource('users','UsersController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

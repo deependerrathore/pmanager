@@ -1,14 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="card" style="width: 18rem;">
-  <div class="card-header">
-    Featured
+<div class="col-md-6 col-lg-6 offset-md-3 offset-lg-3">
+  <div class="card text-center  border-dark">
+    <div class="card-header">
+      Companies
+    </div>
+    <ul class="list-group list-group-flush">
+      @foreach($companies as $company)
+      <li class="list-group-item">{{$company->name}}</li>
+      @endforeach
+    </ul>
   </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">Cras justo odio</li>
-    <li class="list-group-item">Dapibus ac facilisis in</li>
-    <li class="list-group-item">Vestibulum at eros</li>
-  </ul>
 </div>
 @endsection
