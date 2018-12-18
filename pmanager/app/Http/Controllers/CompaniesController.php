@@ -49,6 +49,7 @@ class CompaniesController extends Controller
     public function show(Company $company)
     {
         //
+        return view('companies.show',['company'=>$company]);
     }
 
     /**
@@ -60,6 +61,7 @@ class CompaniesController extends Controller
     public function edit(Company $company)
     {
         //
+        return view('companies.edit',['company'=>$company]);
     }
 
     /**
@@ -72,6 +74,17 @@ class CompaniesController extends Controller
     public function update(Request $request, Company $company)
     {
         //
+        $companyUpdated = $company->update([
+            'name'=> $request->input('name'),
+            'description'=>$request->input('description')
+        ]);
+        
+        if ($companyUpdated) {
+            return redirect()->route('companies.show',[$company->id])->with('success','Company successfully updated');
+        }else{
+            return back()->withInput();
+        }
+        //redirect
     }
 
     /**

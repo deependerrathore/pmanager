@@ -11,6 +11,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ url('/js/holder.min.js') }}" defer></script>
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -18,6 +20,8 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ url('/css/style.css') }}" >
+
 </head>
 <body>
     <div id="app">
@@ -71,15 +75,11 @@
                 </div>
             </div>
         </nav>
-
-        <main class="py-4">
-            <div class="container">
-                <div class="row">
+        @include('partials.success');
+        @include('partials.errors');
+       
                 @yield('content')
-                </div>
-            </div>
-            
-        </main>
+          
     </div>
 </body>
 </html>
