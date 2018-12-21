@@ -6,7 +6,7 @@
     
     @foreach($errors->all as $error)
     <li>
-    <strong>{{!! $error !!}}</strong>
+    <strong>{!! $error !!}</strong>
     </li>
     @endforeach
     
