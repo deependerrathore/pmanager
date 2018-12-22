@@ -96,6 +96,10 @@ class CompaniesController extends Controller
     public function destroy(Company $company)
     {
         //
-        dd($company);
+        if($company->delete()){
+            return redirect()->route('companies.index')->with('success','Company deleted successfully');
+        }
+
+        return back()->withInput()->with('error','Company could not be deleted');
     }
 }
